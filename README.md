@@ -13,6 +13,7 @@ Welcome to **AeroVision Portfolio**, a modern and responsive portfolio app built
   - **Download CV**: Allows users to download the designer's resume.
 - **Navigation Bar**:
   - Logo on the left.
+  - Menu option on the right.
 
 ## Screenshots
 
