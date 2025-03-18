@@ -1,3 +1,4 @@
 {
-  "cmake.sourceDirectory": "/Users/macbook/Development/myfirstapp_2025/linux"
+  "cmake.sourceDirectory": "/Users/macbook/Development/myfirstapp_2025/linux",
+  "java.configuration.updateBuildConfiguration": "interactive"
 }

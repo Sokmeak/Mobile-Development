@@ -23,3 +23,7 @@ plugins {
 }
 
 include(":app")
+
+android {
+    ndkVersion "29.0.113113456"
+}

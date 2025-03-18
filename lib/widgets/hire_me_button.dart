@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HireMeButton extends StatelessWidget {
   const HireMeButton({super.key});
 
+  Future<void> _navigateFacebook() async {
+
+    final Uri testUri = Uri.parse('https://www.facebook.com/share/1658JfJrC7/');
+
+    if (await canLaunchUrl(testUri)) {
+      await launchUrl(testUri);
+    } else {
+      throw 'Could not launch URL';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: _navigateFacebook,
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color(0xFF0D6EFD),
         minimumSize: const Size(double.infinity, 56),
