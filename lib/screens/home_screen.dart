@@ -30,7 +30,10 @@ class HomePage extends StatelessWidget {
                     Navigator.pushReplacementNamed(context, '/login');
                   },
                   style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  child: const Text('Log Out'),
+                  child: const Text('Log Out', style:  TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),),
                 ),
               ],
             ),

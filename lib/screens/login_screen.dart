@@ -111,7 +111,10 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/home');
                 },
-                child: const Text('Login'),
+                child: const Text('Login',style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),),
               ),
               const SizedBox(height: 16),
               
@@ -140,7 +143,10 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                child: const Text('Login with Google'),
+                child: const Text('Login with Google', style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),),
               ),
               
               const Spacer(),

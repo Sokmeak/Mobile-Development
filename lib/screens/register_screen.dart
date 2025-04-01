@@ -152,7 +152,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 onPressed: _agreeToTerms ? () {
                   Navigator.pushReplacementNamed(context, '/home');
                 } : null,
-                child: const Text('Register'),
+                child: const Text('Register',style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),),
               ),
               
               const Spacer(),
