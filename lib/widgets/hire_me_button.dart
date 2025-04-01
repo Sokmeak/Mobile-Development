@@ -6,7 +6,7 @@ class HireMeButton extends StatelessWidget {
 
   Future<void> _navigateFacebook() async {
 
-    final Uri testUri = Uri.parse('https://www.facebook.com/share/1658JfJrC7/');
+    final Uri testUri = Uri.parse('https://github.com/Sokmeak');
 
     if (await canLaunchUrl(testUri)) {
       await launchUrl(testUri);
