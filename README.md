@@ -44,7 +44,7 @@ A modern and clean Flutter application that implements a secure authentication f
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/coinpro-login-ui.git
-2. Switct branch to authentication branch
+    git clone https://github.com/Sokmeak/Mobile-Development.git
+2. Switch branch to authentication branch:
    ``` bash 
    git checkout authentication
