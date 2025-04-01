@@ -1,101 +1,75 @@
 import 'package:flutter/material.dart';
-import 'widgets/profile_image.dart';
-import 'widgets/welcome_text.dart';
-import 'widgets/name_text.dart';
-import 'widgets/description_text.dart';
-import 'widgets/hire_me_button.dart';
-import 'widgets/download_cv_button.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'screens/login_screen.dart';
+import 'screens/register_screen.dart';
+import 'screens/home_screen.dart';
+
 
 void main() {
-  runApp(const PortfolioApp());
+  runApp(const MyApp());
 }
 
-class PortfolioApp extends StatelessWidget {
-  const PortfolioApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Portfolio App',
+      title: 'Coinpro',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Roboto',
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF1A73E8),
+          primary: const Color(0xFF1A73E8),
+        ),
+        textTheme: GoogleFonts.latoTextTheme(
+          Theme.of(context).textTheme,
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: Colors.grey[100],
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide.none,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide.none,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide.none,
+          ),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 16,
+          ),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF1A73E8),
+            foregroundColor: Colors.white,
+            minimumSize: const Size(double.infinity, 50),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+          ),
+        ),
+        checkboxTheme: CheckboxThemeData(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4),
+          ),
+          side: const BorderSide(color: Colors.grey),
+        ),
+        useMaterial3: true,
       ),
-      home: const PortfolioScreen(),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
+        '/home': (context) => const HomePage(),
+      },
     );
   }
 }
 
-class PortfolioScreen extends StatelessWidget {
-  const PortfolioScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Row(
-          children: [
-            Container(
-              width: 40,
-              height: 40,
-              decoration: const BoxDecoration(
-                color: Color(0xFF0D6EFD),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.paragliding_outlined,
-                color: Colors.white,
-                size: 24,
-              ),
-            ),
-            const SizedBox(width: 8),
-            const Text(
-              'AeroVision',
-              style: TextStyle(
-                color: Colors.black87,
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.menu,
-              color: Colors.black87,
-              size: 28,
-            ),
-            onPressed: () {},
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Column(
-            children: [
-              const SizedBox(height: 20),
-              const ProfileImage(),
-              const SizedBox(height: 24),
-              const WelcomeText(),
-              const SizedBox(height: 16),
-              const NameText(),
-              const SizedBox(height: 24),
-              const DescriptionText(),
-              const SizedBox(height: 40),
-              const HireMeButton(),
-              const SizedBox(height: 16),
-              const DownloadCVButton(),
-              const SizedBox(height: 40),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
