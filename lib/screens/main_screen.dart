@@ -7,6 +7,7 @@ import 'my_courses_page.dart';
 import 'home_page.dart';
 import 'categories_page.dart';
 import 'profile_page.dart';
+import '../components/worktency_logo.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -19,8 +20,9 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<AppState>(context, listen: false).fetchCourses());
+    Future.microtask(
+      () => Provider.of<AppState>(context, listen: false).fetchCourses(),
+    );
   }
 
   @override
@@ -47,37 +49,14 @@ class _MainScreenState extends State<MainScreen> {
               ),
               child: Row(
                 children: [
-                  Row(
-                    children: [
-                      Text(
-                        'work',
-                        style: TextStyle(
-                          color: Colors.blue.shade800,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                        ),
-                      ),
-                      Text(
-                        'tency',
-                        style: TextStyle(
-                          color: Colors.blue.shade800,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                        ),
-                      ),
-                      Text(
-                        '›',
-                        style: TextStyle(
-                          color: Colors.orange,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 22,
-                        ),
-                      ),
-                    ],
-                  ),
+                  const LogoWidget(),
                   const Spacer(),
                   IconButton(
-                    icon: Icon(Icons.search, color: Colors.blue.shade800, size: 26),
+                    icon: Icon(
+                      Icons.search,
+                      color: Colors.blue.shade800,
+                      size: 26,
+                    ),
                     onPressed: () {
                       showSearch(
                         context: context,
@@ -86,11 +65,17 @@ class _MainScreenState extends State<MainScreen> {
                     },
                   ),
                   IconButton(
-                    icon: Icon(Icons.person, color: Colors.blue.shade800, size: 26),
+                    icon: Icon(
+                      Icons.person,
+                      color: Colors.blue.shade800,
+                      size: 26,
+                    ),
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const ProfilePage()),
+                        MaterialPageRoute(
+                          builder: (context) => const ProfilePage(),
+                        ),
                       );
                     },
                   ),
@@ -116,7 +101,12 @@ class _MainScreenState extends State<MainScreen> {
                 children: [
                   _buildNavItem(context, Icons.search, 'Explore', 0),
                   _buildNavItem(context, Icons.assignment, 'My courses', 1),
-                  _buildNavItem(context, Icons.play_circle_outline, 'Online course', 2),
+                  _buildNavItem(
+                    context,
+                    Icons.play_circle_outline,
+                    'Online course',
+                    2,
+                  ),
                   _buildNavItem(context, Icons.layers, 'Category', 3),
                 ],
               ),
@@ -127,7 +117,12 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  Widget _buildNavItem(BuildContext context, IconData icon, String label, int index) {
+  Widget _buildNavItem(
+    BuildContext context,
+    IconData icon,
+    String label,
+    int index,
+  ) {
     final appState = Provider.of<AppState>(context);
     final bool isActive = index == appState.currentNavIndex;
 
