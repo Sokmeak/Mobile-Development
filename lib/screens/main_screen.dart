@@ -32,7 +32,7 @@ class _MainScreenState extends State<MainScreen> {
     final List<Widget> pages = [
       const ExplorePage(),
       const MyCoursesPage(),
-      const WorktencyHomePage(),
+      const WorktencyHomePage(), // Online Course
       const CategoriesPage(),
     ];
 

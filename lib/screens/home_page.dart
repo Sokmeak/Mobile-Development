@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_app/components/footer.dart';
 import 'package:provider/provider.dart';
 import '../providers/app_state.dart';
 import '../models/teacher.dart';
@@ -287,107 +288,108 @@ class WorktencyHomePage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                // Footer Section
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      top: BorderSide(
-                        color: Color.fromARGB(255, 255, 255, 255),
-                        width: 0.5,
-                      ),
-                    ),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const LogoWidget(),
-                      const SizedBox(height: 20),
+                const Footer(),
+                // // Footer Section
+                // Container(
+                //   width: double.infinity,
+                //   padding: const EdgeInsets.symmetric(vertical: 20),
+                //   decoration: const BoxDecoration(
+                //     border: Border(
+                //       top: BorderSide(
+                //         color: Color.fromARGB(255, 255, 255, 255),
+                //         width: 0.5,
+                //       ),
+                //     ),
+                //   ),
+                //   child: Column(
+                //     crossAxisAlignment: CrossAxisAlignment.start,
+                //     children: [
+                //       const LogoWidget(),
+                //       const SizedBox(height: 20),
 
-                      // Footer links with responsive layout
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                _buildFooterLink('About Us'),
-                                _buildFooterLink('Contact Us'),
-                                _buildFooterLink('FAQs'),
-                                _buildFooterLink('Community Forum'),
-                                _buildFooterLink('Term of Service'),
-                                _buildFooterLink('Careers'),
-                                _buildFooterLink('Leadership'),
-                                _buildFooterLink('Blog'),
-                              ],
-                            ),
-                          ),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                _buildFooterLink('Social Impact'),
-                                _buildFooterLink('Cookies Setting'),
-                                _buildFooterLink('Accessibility Statement'),
-                                _buildFooterLink('Investors'),
-                                _buildFooterLink('Go Pro Course'),
-                                _buildFooterLink('Affiliate'),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                //       // Footer links with responsive layout
+                //       Row(
+                //         crossAxisAlignment: CrossAxisAlignment.start,
+                //         children: [
+                //           Expanded(
+                //             child: Column(
+                //               crossAxisAlignment: CrossAxisAlignment.start,
+                //               children: [
+                //                 _buildFooterLink('About Us'),
+                //                 _buildFooterLink('Contact Us'),
+                //                 _buildFooterLink('FAQs'),
+                //                 _buildFooterLink('Community Forum'),
+                //                 _buildFooterLink('Term of Service'),
+                //                 _buildFooterLink('Careers'),
+                //                 _buildFooterLink('Leadership'),
+                //                 _buildFooterLink('Blog'),
+                //               ],
+                //             ),
+                //           ),
+                //           Expanded(
+                //             child: Column(
+                //               crossAxisAlignment: CrossAxisAlignment.start,
+                //               children: [
+                //                 _buildFooterLink('Social Impact'),
+                //                 _buildFooterLink('Cookies Setting'),
+                //                 _buildFooterLink('Accessibility Statement'),
+                //                 _buildFooterLink('Investors'),
+                //                 _buildFooterLink('Go Pro Course'),
+                //                 _buildFooterLink('Affiliate'),
+                //               ],
+                //             ),
+                //           ),
+                //         ],
+                //       ),
 
-                      const SizedBox(height: 20),
-                      Center(
-                        child: Container(
-                          constraints: const BoxConstraints(maxHeight: 150),
-                          child: Image.asset(
-                            'assets/images/itc.jpeg',
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      Center(
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            IconButton(
-                              icon: const Icon(Icons.facebook),
-                              onPressed: () {},
-                              color: Colors.grey,
-                            ),
-                            IconButton(
-                              icon: const Icon(Icons.alternate_email),
-                              onPressed: () {},
-                              color: Colors.grey,
-                            ),
-                            IconButton(
-                              icon: const Icon(Icons.play_circle_filled),
-                              onPressed: () {},
-                              color: Colors.grey,
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Center(
-                        child: Text(
-                          '© 2025 Worktency, Inc. All rights reserved.',
-                          style: TextStyle(
-                            color: Colors.grey.shade600,
-                            fontSize: 12,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 20),
+                //       const SizedBox(height: 20),
+                //       Center(
+                //         child: Container(
+                //           constraints: const BoxConstraints(maxHeight: 150),
+                //           child: Image.asset(
+                //             'assets/images/itc.jpeg',
+                //             fit: BoxFit.contain,
+                //           ),
+                //         ),
+                //       ),
+                //       const SizedBox(height: 20),
+                //       Center(
+                //         child: Row(
+                //           mainAxisSize: MainAxisSize.min,
+                //           children: [
+                //             IconButton(
+                //               icon: const Icon(Icons.facebook),
+                //               onPressed: () {},
+                //               color: Colors.grey,
+                //             ),
+                //             IconButton(
+                //               icon: const Icon(Icons.alternate_email),
+                //               onPressed: () {},
+                //               color: Colors.grey,
+                //             ),
+                //             IconButton(
+                //               icon: const Icon(Icons.play_circle_filled),
+                //               onPressed: () {},
+                //               color: Colors.grey,
+                //             ),
+                //           ],
+                //         ),
+                //       ),
+                //       const SizedBox(height: 10),
+                //       Center(
+                //         child: Text(
+                //           '© 2025 Worktency, Inc. All rights reserved.',
+                //           style: TextStyle(
+                //             color: Colors.grey.shade600,
+                //             fontSize: 12,
+                //           ),
+                //           textAlign: TextAlign.center,
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                // const SizedBox(height: 20),
               ],
             ),
           ),
