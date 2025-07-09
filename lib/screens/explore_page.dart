@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter_app/components/footer.dart';
 import 'package:my_flutter_app/models/course.dart';
 import 'package:provider/provider.dart';
 import '../providers/app_state.dart';
@@ -257,6 +258,8 @@ class _ExplorePageState extends State<ExplorePage>
                 : displayCourses.isEmpty
                 ? _buildEmptyState()
                 : _buildGroupedCourseList(displayCourses),
+
+            const Footer(),
           ],
         ),
       ),
